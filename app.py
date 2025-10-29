@@ -1,14 +1,12 @@
-%%writefile /content/app.py
-# BookFlix - Streamlit app for Book Recommendation (Netflix-style UI)
-# Save this file as app.py at the project root.
-#
-# Behavior:
-# - Tries to load precomputed artifacts from ./artifacts/ (model.pkl, book_pivot.pkl, final_rating.pkl, book_name.pkl)
-# - If not found, attempts to build them from raw CSVs expected at ./data/
-#   * BX-Books.csv
-#   * BX-Book-Ratings.csv
-# - After loading or building the model, shows a Netflix-like UI: select a book, click Recommend,
-#   and see 5 recommended books displayed as a grid of covers + titles.
+# app.py - BookFlix (Netflix-style Streamlit GUI)
+# Generated to work with your Colab notebook artifacts.
+
+"""
+Requirements:
+- streamlit
+- pandas
+...
+
 
 import os
 import pickle
