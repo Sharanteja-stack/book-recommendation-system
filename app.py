@@ -203,7 +203,7 @@ if (book_names is None or pivot is None) and BOOKS_CSV.exists() and RATINGS_CSV.
 # If still missing, show message and stop
 if book_names is None or pivot is None:
     st.title("BookFlix - GUI for your Book Recommender")
-    st.error("Artifacts not found. Please place preprocessed pickles in `artifacts/` or raw CSVs in `data/`.
+    st.error("Artifacts not found. Please place preprocessed pickles in `artifacts/` or raw CSVs in `data/`.")
 
 Expected picks: book_name.pkl, book_pivot.pkl, final_rating.pkl.
 Or place BX-Books.csv and BX-Book-Ratings.csv in `data/`.")
