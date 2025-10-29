@@ -200,14 +200,24 @@ model = safe_load_pickle(MODEL_PKL)
 if (book_names is None or pivot is None) and BOOKS_CSV.exists() and RATINGS_CSV.exists():
     book_names, pivot, final_rating, sim_matrix = build_from_csvs(BOOKS_CSV, RATINGS_CSV)
 
-# If still missing, show message and stop
-if book_names is None or pivot is None:
-    st.title("BookFlix - GUI for your Book Recommender")
-    st.error("Artifacts not found. Please place preprocessed pickles in `artifacts/` or raw CSVs in `data/`.")
+# If still not available, show error
+if book_names is None or book_pivot is None:
+    st.title("BookFlix - Book Recommendation App")
+    st.error(
+        """
+Artifacts not found.
+Please place preprocessed pickles in the `artifacts/` folder:
+  - artifacts/book_name.pkl
+  - artifacts/book_pivot.pkl
+  - artifacts/final_rating.pkl
 
-Expected picks: book_name.pkl, book_pivot.pkl, final_rating.pkl.
-Or place ("BX-Books.csv and BX-Book-Ratings.csv in `data/`.")
+Or place raw CSVs in the `data/` folder:
+  - data/BX-Books.csv
+  - data/BX-Book-Ratings.csv
+"""
+    )
     st.stop()
+
 
 # Try to load BX-Books.csv to extract metadata (author, images)
 books_meta = None
