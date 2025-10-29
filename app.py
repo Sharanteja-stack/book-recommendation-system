@@ -206,7 +206,7 @@ if book_names is None or pivot is None:
     st.error("Artifacts not found. Please place preprocessed pickles in `artifacts/` or raw CSVs in `data/`.")
 
 Expected picks: book_name.pkl, book_pivot.pkl, final_rating.pkl.
-Or place BX-Books.csv and BX-Book-Ratings.csv in `data/`.")
+Or place ("BX-Books.csv and BX-Book-Ratings.csv in `data/`.")
     st.stop()
 
 # Try to load BX-Books.csv to extract metadata (author, images)
