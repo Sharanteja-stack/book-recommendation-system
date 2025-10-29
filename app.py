@@ -5,7 +5,9 @@
 Requirements:
 - streamlit
 - pandas
+- numpy
 ...
+
 
 
 import os
